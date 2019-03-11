@@ -9,6 +9,8 @@
   "author": "Olaoye Adewale",
   "license": "ISC",
   "dependencies": {
-    "fs": "0.0.1-security"
+    "chalk": "^2.4.2",
+    "fs": "0.0.1-security",
+    "validator": "^10.8.0"
   }
 }
