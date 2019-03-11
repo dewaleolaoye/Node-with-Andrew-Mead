@@ -7,15 +7,28 @@ const command = process.argv[2];
 yargs.command({
   command: "add",
   describe: "use to add new note",
-  hancler: function() {
-    console.log("Add a new note");
+  builder: {
+    title: {
+      describe: "Note title",
+      demandOption: true,
+      title: "string"
+    },
+    body: {
+      describe: "note body",
+      demandOption: true,
+      title: "string"
+    }
+  },
+  handler: function(argv) {
+    console.log("Title: " + argv.title);
+    console.log("Body:" + argv.body);
   }
 });
 // create remove command
 yargs.command({
   command: "remove",
   describe: "remove a note",
-  hancler: function() {
+  handler: function() {
     console.log("remove note");
   }
 });
@@ -23,7 +36,7 @@ yargs.command({
 yargs.command({
   command: "list",
   describe: "list a note",
-  hancler: function() {
+  handler: function() {
     console.log("list note");
   }
 });
@@ -31,8 +44,9 @@ yargs.command({
 yargs.command({
   command: "read",
   describe: "read a note",
-  hancler: function() {
+  handler: function() {
     console.log("read note");
   }
 });
-console.log(yargs.argv);
+yargs.parse();
+// console.log(yargs.argv);
