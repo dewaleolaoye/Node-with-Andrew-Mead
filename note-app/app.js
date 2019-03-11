@@ -1,5 +1,4 @@
-// const add = require("./utils");
-// // const name = "Adewale";
+const getNotes = require("./notes");
 
-// const sum = add(5, -2);
-// console.log(sum);
+const msg = getNotes();
+console.log(msg);
