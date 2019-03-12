@@ -1,7 +1,6 @@
-const validator = require("validator");
 const chalk = require("chalk");
 const yargs = require("yargs");
-const command = process.argv[2];
+const notes = require("./notes");
 
 // create the add command
 yargs.command({
@@ -20,8 +19,7 @@ yargs.command({
     }
   },
   handler: function(argv) {
-    console.log("Title: " + argv.title);
-    console.log("Body:" + argv.body);
+    notes.addNote(argv.title, argv.body);
   }
 });
 // create remove command
