@@ -37,6 +37,11 @@ const removeNote = title => {
   }
 };
 
+// list notes
+const listNote = title => {
+  const notes = loadNotes();
+};
+
 // save note function
 const saveNote = note => {
   const dataJSON = JSON.stringify(note);
