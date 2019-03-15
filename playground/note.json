@@ -1,0 +1,62 @@
+{
+  "results": [
+    {
+      "gender": "female",
+      "name": {
+        "title": "miss",
+        "first": "laura",
+        "last": "buvarp"
+      },
+      "location": {
+        "street": "løvenskiolds gate 5765",
+        "city": "glosli",
+        "state": "rogaland",
+        "postcode": "5813",
+        "coordinates": {
+          "latitude": "50.1731",
+          "longitude": "134.1065"
+        },
+        "timezone": {
+          "offset": "-1:00",
+          "description": "Azores, Cape Verde Islands"
+        }
+      },
+      "email": "laura.buvarp@example.com",
+      "login": {
+        "uuid": "8156383a-a515-41ef-a16f-1b51225e884e",
+        "username": "yellowcat759",
+        "password": "ginger1",
+        "salt": "vfwg38Qe",
+        "md5": "1b674c9e5ff90694a7b387968560d169",
+        "sha1": "fa908104011e4f2d4389cbdd6701cf03c356d59d",
+        "sha256": "5d9ace008283d9dad7e0654c8f036324910875e876859c9ec9f33106a9e975f1"
+      },
+      "dob": {
+        "date": "1962-01-26T14:00:48Z",
+        "age": 57
+      },
+      "registered": {
+        "date": "2003-09-30T09:23:31Z",
+        "age": 15
+      },
+      "phone": "23855299",
+      "cell": "48905837",
+      "id": {
+        "name": "FN",
+        "value": "26016200149"
+      },
+      "picture": {
+        "large": "https://randomuser.me/api/portraits/women/17.jpg",
+        "medium": "https://randomuser.me/api/portraits/med/women/17.jpg",
+        "thumbnail": "https://randomuser.me/api/portraits/thumb/women/17.jpg"
+      },
+      "nat": "NO"
+    }
+  ],
+  "info": {
+    "seed": "3d34ad4292671a5d",
+    "results": 1,
+    "page": 1,
+    "version": "1.2"
+  }
+}
