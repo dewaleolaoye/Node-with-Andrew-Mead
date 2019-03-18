@@ -1,12 +1,29 @@
-setTimeout(() => {
-  console.log("Two second up");
-}, 2000);
+// setTimeout(() => {
+//   console.log("Two second up");
+// }, 2000);
 
-const names = ["wale", "abiodun", "olaoye"];
-const shortNames = names.filter(name => name.length <= 4);
-console.log(shortNames);
-var words = ["spray", "limit", "elite", "exuberant", "destruction", "present"];
+// const names = ["wale", "abiodun", "olaoye"];
+// const shortNames = names.filter(name => name.length <= 4);
 
-const result = words.filter(word => word.length > 6);
-console.log(result);
-// expected output: Array ["exuberant", "destruction", "present"]
+// const geocode = (address, callback) => {
+//   setTimeout(() => {
+//     const data = {
+//       latitude: 0,
+//       longitude: 0
+//     };
+//     callback(data);
+//   }, 3000);
+// };
+
+// geocode("philadelphia", data => {
+//   console.log(data);
+// });
+
+const add = (a, b, callback) => {
+  setTimeout(() => {}, 2000);
+  callback(a + b);
+};
+
+add(6, 4, sum => {
+  console.log(sum);
+});
