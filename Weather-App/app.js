@@ -1,14 +1,22 @@
-const request = require("request");
-const chalk = require("chalk");
 const geocode = require("./utils/geocode");
 const forecast = require("./utils/forecast");
+const chalk = require("chalk");
 
-geocode("Keffi", (error, data) => {
-  console.log("Error", error);
-  console.log("Data", data);
-});
+const address = process.argv[2];
 
-forecast(-75.7088, 44.1545, (error, data) => {
-  console.log("Error", error);
-  console.log("Data", data);
-});
+if (!address) {
+  console.log(chalk.red.inverse("Please input an address"));
+} else {
+  geocode(address, (error, data) => {
+    if (error) {
+      return console.log(error);
+    }
+    forecast(data.latitude, data.longitude, (error, forecastData) => {
+      if (error) {
+        console.log(error);
+      }
+      console.log(chalk.green.inverse(data.location));
+      console.log(chalk.blue.inverse(forecastData));
+    });
+  });
+}
