@@ -2,9 +2,15 @@ const express = require("express");
 const path = require("path");
 const app = express();
 
+// Define path for express config
 const publicDirectoryPath = path.join(__dirname, "../public");
+const viewsPath = path.join(__dirname, "../templates");
 
+// Setup for handlebars engine and root location
 app.set("view engine", "hbs");
+app.set("views", viewsPath);
+
+// Setup Static Directory to serve
 app.use(express.static(publicDirectoryPath));
 
 // root page
