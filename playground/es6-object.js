@@ -55,12 +55,21 @@
 // let { city, country } = obj.address;
 // console.log(city, address);
 
-let obj = {
-  name: "John Doe",
-  address: {
-    city: "Lagos",
-    country: "Nigeria"
-  }
+// let obj = {
+//   name: "John Doe",
+//   address: {
+//     city: "Lagos",
+//     country: "Nigeria"
+//   }
+// };
+// let { city, country } = obj.address;
+// console.log(city, country);
+
+const product = {
+  label: "Red notebook",
+  price: 5,
+  stock: 201
 };
-let { city, country } = obj.address;
-console.log(city, country);
+
+const { label, stock } = product;
+console.log(label, stock);
