@@ -2,19 +2,25 @@ const express = require("express");
 const app = express();
 
 app.get("", (req, res) => {
-  res.send("Hello Express");
+  res.send("<h1>Hello Express</h1>");
 });
 
 app.get("/help", (req, res) => {
-  res.send("Help me");
+  res.send({
+    name: "Adewale",
+    surname: "Olaoye"
+  });
 });
 
 app.get("/about", (req, res) => {
-  res.send("about page");
+  res.send("<h2>About page</h2>");
 });
 
 app.get("/weather", (req, res) => {
-  res.send("View Weather");
+  res.send({
+    forecast: "It is sunny",
+    location: "Lagos"
+  });
 });
 
 app.listen(3000, () => {
