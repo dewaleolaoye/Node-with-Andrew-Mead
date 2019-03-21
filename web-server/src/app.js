@@ -1,14 +1,17 @@
 const express = require("express");
 const path = require("path");
 const app = express();
+const hbs = require("hbs");
 
 // Define path for express config
 const publicDirectoryPath = path.join(__dirname, "../public");
-const viewsPath = path.join(__dirname, "../templates");
+const viewsPath = path.join(__dirname, "../templates/views");
+const partialsPath = path.join(__dirname, "../templates/partials");
 
 // Setup for handlebars engine and root location
 app.set("view engine", "hbs");
 app.set("views", viewsPath);
+hbs.registerPartials(partialsPath);
 
 // Setup Static Directory to serve
 app.use(express.static(publicDirectoryPath));
@@ -30,12 +33,11 @@ app.get("/about", (req, res) => {
 });
 
 // help page
-
 app.get("/help", (req, res) => {
   res.render("help", {
     title: "Help Page",
-    email: "adewaleolaoye21@gmail.com",
-    address: "22, Association Close Ogudu"
+    name: "Adewale Olaoye",
+    email: "adewaleolaoye21@gmail.com"
   });
 });
 
