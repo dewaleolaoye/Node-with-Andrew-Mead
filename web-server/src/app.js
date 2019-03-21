@@ -48,6 +48,25 @@ app.get("/weather", (req, res) => {
   });
 });
 
+// query string
+app.get("/products", (req, res) => {
+  console.log(req.query.search);
+  if (
+    req.query.serch === "" ||
+    !req.query.search ||
+    req.query.search === undefined
+  ) {
+    return res.send({
+      error: "You must provide a search term"
+    });
+  }
+
+  console.log(req.query);
+  res.send({
+    products: "[]"
+  });
+});
+
 // help/ address that does not exist
 app.get("/help/*", (req, res) => {
   res.render("404", {
