@@ -48,6 +48,22 @@ app.get("/weather", (req, res) => {
   });
 });
 
+// help/ address that does not exist
+app.get("/help/*", (req, res) => {
+  res.render("404", {
+    title: "404",
+    errorMessage: "Help Article not found"
+  });
+});
+
+// from the root, address that did not exist
+app.get("*", (req, res) => {
+  res.render("404", {
+    title: 404,
+    errorMessage: "Page Not Found"
+  });
+});
+
 app.listen(3000, () => {
   console.log("App running on port 3000");
 });
