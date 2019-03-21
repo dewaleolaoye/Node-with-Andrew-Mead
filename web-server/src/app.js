@@ -42,9 +42,15 @@ app.get("/help", (req, res) => {
 });
 
 app.get("/weather", (req, res) => {
+  if (!req.query.address || req.query.address === "") {
+    return res.send({
+      error: "You have not input address"
+    });
+  }
   res.send({
     forecast: "It is sunny",
-    location: "Lagos"
+    location: "Lagos",
+    address: req.query.address
   });
 });
 
@@ -54,14 +60,14 @@ app.get("/products", (req, res) => {
   if (
     req.query.serch === "" ||
     !req.query.search ||
-    req.query.search === undefined
+    req.query.search === "undefined"
   ) {
     return res.send({
       error: "You must provide a search term"
     });
   }
 
-  console.log(req.query);
+  // console.log(req.query);
   res.send({
     products: "[]"
   });
