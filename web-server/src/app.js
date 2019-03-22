@@ -33,6 +33,7 @@ app.get("/about", (req, res) => {
   });
 });
 
+// help
 app.get("/help", (req, res) => {
   res.render("help", {
     helpText: "This is some helpful text.",
@@ -41,13 +42,13 @@ app.get("/help", (req, res) => {
   });
 });
 
+// weather
 app.get("/weather", (req, res) => {
   if (!req.query.address) {
     return res.send({
       error: "Unable to find location. Try another search"
     });
   }
-
   geocode(
     req.query.address,
     (error, { latitude, longitude, location } = {}) => {
