@@ -46,7 +46,7 @@ app.get("/help", (req, res) => {
 app.get("/weather", (req, res) => {
   if (!req.query.address) {
     return res.send({
-      error: "from the weather Unable to find location. Try another search"
+      error: "Unable to find location. Try another search"
     });
   }
   geocode(
